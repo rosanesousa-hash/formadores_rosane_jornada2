@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IA Inclusiva - Gerador de Prompts Acessíveis</title>
+  <!-- Biblioteca de Ícones Acessíveis -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #003366;
+      --secondary-color: #0056b3;
+      --accent-color: #ffbf00;
+      --bg-color: #f4f7f9;
+      --card-bg: #ffffff;
+      --text-color: #222222;
+      --border-color: #cccccc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      padding: 20px;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      padding: 24px;
+      text-align: center;
+      border-radius: 8px;
+      margin-bottom: 24px;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #e0e0e0;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-container {
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-height: 320px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: var(--primary-color);
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    input[type="text"], select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover, button:focus {
+      background-color: var(--secondary-color);
+      outline: 3px solid var(--accent-color);
+    }
+
+    .output-box {
+      background-color: #eef3f8;
+      border-left: 5px solid var(--primary-color);
+      padding: 16px;
+      margin-top: 16px;
+      border-radius: 4px;
+      white-space: pre-wrap;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .checklist-item input {
+      margin-right: 10px;
+      width: 18px;
+      height: 18px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 16px;
+      font-size: 0.9rem;
+      color: #666666;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>
+      <!-- Ícone visual desativado para leitores de tela para evitar redundância de leitura -->
+      <i class="fa-solid fa-universal-access" aria-hidden="true"></i>
+      <span>Portal IA Inclusiva</span>
+    </h1>
+    <p>Tecnologia e Acessibilidade para a Educação Especial e Inclusiva</p>
+  </header>
+
+  <main>
+    <!-- Imagem em destaque com texto alternativo acessível e descritivo -->
+    <div class="hero-container">
+      <img 
+        src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80" 
+        alt="Estudantes em uma sala de aula inclusiva utilizando computadores e tecnologias assistivas com apoio do professor." 
+        class="hero-image"
+      >
+    </div>
+
+    <!-- Seção 1: Gerador Dinâmico de Prompts -->
+    <section class="card" aria-labelledby="generator-heading">
+      <h2 id="generator-heading">
+        <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+        <span>Gerador Dinâmico de Prompts Acessíveis</span>
+      </h2>
+      <p style="margin-bottom: 16px;">Preencha os campos abaixo para gerar um comando adaptado para estudantes com deficiência visual (Leitores de Tela e Audiodescrição).</p>
+      
+      <div class="form-group">
+        <label for="topic">Tema da Aula / Conteúdo:</label>
+        <input type="text" id="topic" placeholder="Ex: Sistema Solar, Célula Vegetal, Geografia">
+      </div>
+
+      <div class="form-group">
+        <label for="target-audience">Público-alvo / Ano Escolar:</label>
+        <input type="text" id="target-audience" placeholder="Ex: 7º ano do Ensino Fundamental">
+      </div>
+
+      <div class="form-group">
+        <label for="resource-type">Tipo de Material Desejado:</label>
+        <select id="resource-type">
+          <option value="roteiro-podcast">Roteiro para Podcast Educativo</option>
+          <option value="slides-acessiveis">Estrutura de Slides para Leitor de Tela</option>
+          <option value="audiodescricao-imagem">Texto de Apoio com Audiodescrição Detalhada</option>
+        </select>
+      </div>
+
+      <button type="button" onclick="generatePrompt()">
+        <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+        <span>Gerar Prompt Acessível</span>
+      </button>
+
+      <div id="output-area" class="output-box" style="display: none;" aria-live="polite">
+        <strong>Seu Prompt Gerado (Copie e cole no Gemini):</strong>
+        <div id="generated-prompt-text" style="margin-top: 10px;"></div>
+      </div>
+    </section>
+
+    <!-- Seção 2: Checklist Formativo Interativo -->
+    <section class="card" aria-labelledby="checklist-heading">
+      <h2 id="checklist-heading">
+        <i class="fa-solid fa-square-check" aria-hidden="true"></i>
+        <span>Checklist Formativo de Acessibilidade Visual</span>
+      </h2>
+      <p style="margin-bottom: 16px;">Utilize esta lista para verificar se o seu plano de aula ou recurso mediado por IA atende aos requisitos de equidade:</p>
+
+      <div class="checklist-item">
+        <input type="checkbox" id="chk1">
+        <label for="chk1">O prompt instrui a IA a gerar descrições textuais alternativas para imagens e gráficos.</label>
+      </div>
+
+      <div class="checklist-item">
+        <input type="checkbox" id="chk2">
+        <label for="chk2">O formato do texto evita tabelas complexas sem marcação ou elementos visuais sem suporte de áudio.</label>
+      </div>
+
+      <div class="checklist-item">
+        <input type="checkbox" id="chk3">
+        <label for="chk3">Foi disponibilizada uma opção de entrega em formato sonoro (Podcast / Áudio) além dos slides.</label>
+      </div>
+
+      <div class="checklist-item">
+        <input type="checkbox" id="chk4">
+        <label for="chk4">Estudantes cegos e com baixa visão atuam ativamente na criação e apresentação do projeto.</label>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Projeto de Acompanhamento no Estágio Probatório - Acessibilidade e Inovação Tecnológica com IA</p>
+  </footer>
+
+  <script>
+    function generatePrompt() {
+      const topic = document.getElementById('topic').value || '[Tema do Conteúdo]';
+      const audience = document.getElementById('target-audience').value || '[Série/Ano]';
+      const resourceType = document.getElementById('resource-type').value;
+
+      let promptTemplate = "";
+
+      if (resourceType === "roteiro-podcast") {
+        promptTemplate = `Atue como um especialista em pedagogia inclusiva. Crie um roteiro de Podcast Educativo dinâmico e narrativo para estudantes do ${audience} sobre o tema "${topic}".\n\nRequisitos de Acessibilidade Visual:\n1. Toda informação visual importante deve ser explicitada através de metáforas sonoras e audiodescrição integrada na fala dos apresentadores.\n2. Evite depender de elementos visuais.\n3. Estruture em formato de diálogo claro, com marcações de efeito sonoro entre colchetes.`;
+      } else if (resourceType === "slides-acessiveis") {
+        promptTemplate = `Crie a estrutura de um conjunto de slides educativos para estudantes do ${audience} sobre o tema "${topic}".\n\nRequisitos de Acessibilidade para Leitor de Tela:\n1. Organize em tópicos curtos (bullet points) com ordem lógica de leitura.\n2. Para cada slide, inclua um bloco chamado "[Audiodescrição de Imagem Sugerida]" descrevendo em detalhes objetivos o que deve figurar na imagem visual para quem utiliza leitor de tela.`;
+      } else {
+        promptTemplate = `Elabore um texto explicativo sobre "${topic}" voltado para ${audience}.\n\nRequisitos de Audiodescrição:\n1. Forneça uma explicação detalhada e rica em sensações não-visuais (textura, som, escala, forma).\n2. Inclua um parágrafo dedicado exclusivamente à descrição objetiva e acessível de um diagrama ou imagem central do tema.`;
+      }
+
+      document.getElementById('generated-prompt-text').innerText = promptTemplate;
+      document.getElementById('output-area').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
